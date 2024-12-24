@@ -51,10 +51,10 @@ jobs:
           host: ${{ secrets.EC2_HOST_IP }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            if [ "$(sudo docker ps -a -q -f name=dockerdb)" ]; then
+            if [ "$(sudo docker ps -q -f name=dockerdb)" ]; then
               sudo docker rm -f dockerdb
             fi
-            if [ "$(sudo docker ps -a -q -f name=dockerbackend)" ]; then
+            if [ "$(sudo docker ps -q -f name=dockerbackend)" ]; then
               sudo docker rm -f dockerbackend
             fi
             if [ "$(sudo docker images -q ${{ secrets.DOCKERHUB_USERNAME }}/dockerdb" ]; then
