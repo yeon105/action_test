@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Docker pull and run
-        uses: applyboy/ssh-action@master # aws ec2 ssh에 접속해주는 템플릿
+        uses: appleboy/ssh-action@master # aws ec2 ssh에 접속해주는 템플릿
         with:
           username: ubuntu
           host: ${{ secrets.EC2_HOST_IP }}
