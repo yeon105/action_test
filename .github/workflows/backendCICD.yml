@@ -57,10 +57,10 @@ jobs:
             if [ "$(sudo docker ps -a -q -f name=dockerbackend)" ]; then
               sudo docker rm -f dockerbackend
             fi
-            if [ "$(sudo docker images -q ${{ secrets.DOCKERHUB_USERNAME }}/dockerdb" ]; then
+            if [ "$(sudo docker images -q ${{ secrets.DOCKERHUB_USERNAME }}/dockerdb)" ]; then
               sudo docker rmi -f ${{ secrets.DOCKERHUB_USERNAME }}/dockerdb
             fi
-            if [ "$(sudo docker images -q ${{ secrets.DOCKERHUB_USERNAME }}/dockerbackend" ]; then
+            if [ "$(sudo docker images -q ${{ secrets.DOCKERHUB_USERNAME }}/dockerbackend)" ]; then
               sudo docker rmi -f ${{ secrets.DOCKERHUB_USERNAME }}/dockerbackend
             fi
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/dockerdb
